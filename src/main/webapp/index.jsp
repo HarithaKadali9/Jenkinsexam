@@ -12,16 +12,22 @@
     <%
         String validUsername = "sai";
         String validPassword = "422";
+
         if (request.getMethod().equalsIgnoreCase("post")) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
+
             if (validUsername.equals(username) && validPassword.equals(password)) {
+    %>
                 <h2>Login Successful</h2>
+    <%
             } else {
+    %>
                 <h2>Login Failed. Please check your username and password.</h2>
+    <%
             }
         }
-     %>
+    %>
 
     <form action="" method="post">
         <input type="text" id="username" name="username" required><br>
